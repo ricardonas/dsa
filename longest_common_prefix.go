@@ -1,4 +1,3 @@
-// This is not my first attempt at solving the problem.
 func longestCommonPrefix(strs []string) string {
     i := 0
 
