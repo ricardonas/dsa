@@ -1,20 +1,22 @@
 func longestCommonPrefix(strs []string) string {
-    i := 0
+	if len(strs) == 1 {
+		return strs[0]
+	}
+	
+	sort.Strings(strs)
 
-    str1 := strs[0]
-    str2 := strs[len(strs) - 1]
+	index, str1, str2 := 0, strs[0], strs[len(strs)-1]
 
-    for i < len(str1) {
-        if str1[i] == str2[i] {
-            i++
-        } else {
-            break;
-        }
-    }
+	for index < len(str1) {
+		if str1[index] != str2[index] {
+			break;
+		}
+		index++
+	}
+	
+	if index == 0 {
+		return ""
+	}
 
-    if i == 0 {
-        return ""
-    }
-    
-    return str1[0:i]
+	return str1[0:index]
 }
