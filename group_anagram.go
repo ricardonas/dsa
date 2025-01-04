@@ -6,16 +6,13 @@ func groupAnagrams(strs []string) [][]string {
 		var characters []string = strings.Split(word, "")
 		sort.Strings(characters)
 		key := strings.Join(characters, "")
-
-		if _, exists := hasher[key]; exists {
-			hasher[key] = append(hasher[key], word)
-		} else {
-			hasher[key] = []string{word}
-		}
+		hasher[key] = append(hasher[key], word)
 	}
 
-	result := [][]string{}
+	//result := [][]string{}
 
+	result := make([][]string, 0, len(hasher))
+	
 	for _, v := range hasher {
 		result = append(result, v)
 	}
