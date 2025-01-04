@@ -6,6 +6,8 @@ type ListNode struct {
 }
 
 // Solution 1
+// Time: O(n)
+// Space: O(n)
 func reverseList(head *ListNode) *ListNode {
 	var reversed *ListNode = nil
 
@@ -20,26 +22,19 @@ func reverseList(head *ListNode) *ListNode {
 }
 
 // Solution 2 - Two pointers
+// Time: O(n)
+// Space: O(n)
 func reverseList(head *ListNode) *ListNode {
-	prev, curr := nil, head
-	
-	// Original:	1 -> 2 -> 3 -> 4 -> 5
-	// Result:		5 -> 4 -> 3 -> 2 -> 1
+	var prev *ListNode = nil
+	curr := head
+
 	for curr != nil {
-		// Store a copy to the ptr next before it got changed.
-		temp := curr.Next
-
-		// Change the current element to point to the previous.
+		nextCopy := curr.Next
 		curr.Next = prev
-
-		// Moves 'previous' pointer to the curret reading node.
 		prev = curr
-
-		// Move 'curr' pointer forward with the store variable.
-		curr = temp 
+		curr = nextCopy
 	}
 
 	return prev
-
-}
+} 
 
