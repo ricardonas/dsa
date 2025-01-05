@@ -1,5 +1,5 @@
 func groupAnagrams(strs []string) [][]string {
-    
+    	// Create a hash table to store group of anagrams based on the sorted word.
 	hasher := make(map[string][]string)
 
 	for _, word := range strs {
