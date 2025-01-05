@@ -9,8 +9,6 @@ func groupAnagrams(strs []string) [][]string {
 		hasher[key] = append(hasher[key], word)
 	}
 
-	//result := [][]string{}
-
 	result := make([][]string, 0, len(hasher))
 	
 	for _, v := range hasher {
