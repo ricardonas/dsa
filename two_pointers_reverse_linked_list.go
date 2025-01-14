@@ -5,23 +5,6 @@ type ListNode struct {
 	Next *ListNode
 }
 
-// Solution 1
-// Time: O(n)
-// Space: O(n)
-func reverseList(head *ListNode) *ListNode {
-	var reversed *ListNode = nil
-
-	currentNode := head
-
-	for currentNode != nil {
-		reversed = &ListNode{ Val: currentNode.Val, Next: reversed }
-		currentNode = currentNode.Next
-	}
-
-	return reversed
-}
-
-// Solution 2 - Two pointers
 // Time: O(n)
 // Space: O(n)
 func reverseList(head *ListNode) *ListNode {
@@ -37,4 +20,3 @@ func reverseList(head *ListNode) *ListNode {
 
 	return prev
 } 
-
