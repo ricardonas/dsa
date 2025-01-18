@@ -6,7 +6,7 @@ func minimumAverage(nums []int) float64 {
 
 	min := math.MaxFloat64
 
-	for left <= right {
+	for left < right {
 		calc := float64(nums[left]+nums[right]) / float64(2)
 
 		if calc < min {
