@@ -6,7 +6,7 @@ func distinctAverages(nums []int) int {
 
 	for l < r {
 
-		avg := float64(nums[l] + nums[r]) / float64(2)
+		avg := float64(nums[l] + nums[r]) / 2.0
 
 		if _, ok := hasher[avg]; !ok {
 			hasher[avg] = nil
